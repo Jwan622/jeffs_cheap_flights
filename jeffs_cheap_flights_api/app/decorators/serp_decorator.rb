@@ -8,19 +8,19 @@ class SerpDecorator
 
   def decorate
     {
-      best_flights: best_flights(serp_data),
-      other_flights: other_flights(serp_data),
+      best_flights: best_flights,
+      other_flights: other_flights,
       lowest_price: lowest_price,
       typical_price_range: typical_price_range,
       price_level: price_level
     }
   end
 
-  def best_flights(serp_data)
+  def best_flights
     serp_data['best_flights']
   end
 
-  def other_flights(serp_data)
+  def other_flights
     serp_data['other_flights']
   end
 
