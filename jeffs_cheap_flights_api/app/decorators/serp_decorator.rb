@@ -4,7 +4,6 @@ class SerpDecorator
   attr_reader :serp_data
   def initialize(serp_data)
     @serp_data = serp_data
-    puts @serp_data
   end
 
   def decorate

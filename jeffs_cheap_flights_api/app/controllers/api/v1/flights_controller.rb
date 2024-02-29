@@ -1,7 +1,7 @@
 class Api::V1::FlightsController < ApplicationController
   def index
-    @routes = FlightFetcher.fetch()
+    @flights = FlightFetcher.fetch()
 
-    render json: @routes
+    render json: @flights
   end
 end
