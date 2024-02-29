@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Flights", type: :request do
+RSpec.describe "Flights", :vcr, type: :request do
   describe "GET /index" do
     it "returns http success" do
       get "/api/v1/flights"

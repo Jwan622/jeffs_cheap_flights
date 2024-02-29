@@ -1,5 +1,5 @@
 require 'google_search_results'
-class Serp
+class SerpClient
   def self.fetch()
     params = {
       q: '', # I think this is just a useless param
@@ -14,6 +14,7 @@ class Serp
     }
 
     search = GoogleSearch.new(params)
+
     return search.get_hash.with_indifferent_access
   end
 end
