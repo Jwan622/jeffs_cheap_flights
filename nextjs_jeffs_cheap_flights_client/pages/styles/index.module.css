@@ -1,0 +1,44 @@
+/* styles/Index.module.css */
+.appContainer {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Allocate 1/3 of the space to the right column */
+  gap: 20px;
+  padding: 20px;
+  align-items: start; /* Aligns the content to the top of the grid */
+  height: 100vh; /* Make the grid container take up the full viewport height */
+}
+
+.flightsSection {
+  grid-column: 1; /* Occupies the first column */
+}
+
+.detailsContainer {
+  grid-column: 2; /* Occupies the second column */
+  grid-row: 1 / -1; /* Spans from the first to the last row */
+  background-color: #4CAF50; /* Green background */
+  padding: 30px; /* Increased padding */
+  border-radius: 8px;
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+  font-size: 2.8em; /* Larger font size */
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .appContainer {
+    grid-template-columns: 1fr; /* Stack on top of each other on small screens */
+    grid-template-rows: auto 1fr; /* Define rows explicitly for stacking */
+  }
+
+  .flightsSection {
+    grid-column: 1; /* Reset to take full width */
+  }
+
+  .detailsContainer {
+    grid-column: 1; /* Reset to take full width */
+    position: relative; /* Reset sticky positioning on small screens */
+    top: auto;
+    height: auto;
+  }
+}

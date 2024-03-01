@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import fetch from 'isomorphic-unfetch';
-import FullFlight from '../components/FullFlight';
-import FlightSearchDetails from "../components/FlightSearchDetails";
+import FullFlight from '../components/FullFlight/FullFlight';
+import FlightSearchDetails from "../components/FullSearchDetails/FlightSearchDetails";
+import styles from './styles/index.module.css';
+
 
 interface FlightsState {
   best_flights: FlightData[];
@@ -30,7 +32,7 @@ interface FlightLeg {
 }
 
 
-const App: React.FC = () => {
+const Index: React.FC = () => {
   const [flights, setFlights] = useState<FlightsState>({
     best_flights: [],
     other_flights: [],
@@ -64,20 +66,22 @@ const App: React.FC = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div>
-      <h1>Best Flights</h1>
-      {flights.best_flights.map((flight, index) => (
-        <FullFlight key={flight.departure_token} flight={flight} index={index}/>
-      ))}
+    <div className={styles.appContainer}>
+      <div className={styles.flightsSection}>
+        <h1>Best Flights</h1>
+        {flights.best_flights.map((flight, index) => (
+          <FullFlight key={flight.departure_token} flight={flight} index={index}/>
+        ))}
 
-      <h2>Other Flights</h2>
-      {flights.other_flights.map((flight, index) => (
-        <FullFlight key={flight.departure_token} flight={flight} index={index}/>
-      ))}
+        <h2>Other Flights</h2>
+        {flights.other_flights.map((flight, index) => (
+          <FullFlight key={flight.departure_token} flight={flight} index={index}/>
+        ))}
+      </div>
 
-      <FlightSearchDetails flights={flights}/>
+      <FlightSearchDetails flights={flights} className={styles.detailsContainer} />
     </div>
   );
 };
 
-export default App;
+export default Index;
