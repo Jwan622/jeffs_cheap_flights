@@ -9,16 +9,12 @@ interface FlightSearchDetailsProps {
   }
 }
 const FlightSearchDetails: React.FC<FlightSearchDetailsProps> = (props) => (
-  <>
-    return (
-      <div>
-        <h3>Other Route Deets:</h3>
-        <div>Lowest Price: {props.flights.lowest_price}</div>
-        <div>Typical Price Range: {props.flights.typical_price_range}</div>
-        <div>Price Level: {props.flights.price_level}</div>
-        </div>
-    )
-  </>
+    <div>
+      <h3>Other Route Deets:</h3>
+      <div>Lowest Price: {props.flights.lowest_price}</div>
+      <div>Typical Price Range: {props.flights.typical_price_range}</div>
+      <div>Price Level: {props.flights.price_level}</div>
+    </div>
 )
 
 export default FlightSearchDetails

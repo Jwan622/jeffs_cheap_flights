@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import fetch from 'isomorphic-unfetch';
-import Flight from '../components/Flight';
+import FullFlight from '../components/FullFlight';
 import FlightSearchDetails from "../components/FlightSearchDetails";
 
 interface FlightsState {
@@ -67,12 +67,12 @@ const App: React.FC = () => {
     <div>
       <h1>Best Flights</h1>
       {flights.best_flights.map((flight, index) => (
-        <Flight key={flight.departure_token} flight={flight} index={index}/>
+        <FullFlight key={flight.departure_token} flight={flight} index={index}/>
       ))}
 
       <h2>Other Flights</h2>
       {flights.other_flights.map((flight, index) => (
-        <Flight key={flight.departure_token} flight={flight} index={index}/>
+        <FullFlight key={flight.departure_token} flight={flight} index={index}/>
       ))}
 
       <FlightSearchDetails flights={flights}/>
