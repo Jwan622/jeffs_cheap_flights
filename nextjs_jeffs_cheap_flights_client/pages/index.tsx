@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import fetch from 'isomorphic-unfetch';
-import Flight from '../components/Flight'; // Ensure Flight component is also converted to TypeScript
+import Flight from '../components/Flight';
+import FlightSearchDetails from "../components/FlightSearchDetails";
 
 interface FlightsState {
   best_flights: FlightData[];
@@ -66,20 +67,15 @@ const App: React.FC = () => {
     <div>
       <h1>Best Flights</h1>
       {flights.best_flights.map((flight, index) => (
-        <Flight key={flight.departure_token} flight={flight} index={index} />
+        <Flight key={flight.departure_token} flight={flight} index={index}/>
       ))}
 
       <h2>Other Flights</h2>
       {flights.other_flights.map((flight, index) => (
-        <Flight key={flight.departure_token} flight={flight} index={index} />
+        <Flight key={flight.departure_token} flight={flight} index={index}/>
       ))}
 
-      <div>
-        <h3>Other Route Deets:</h3>
-        <div>Lowest Price: {flights.lowest_price}</div>
-        <div>Typical Price Range: {flights.typical_price_range}</div>
-        <div>Price Level: {flights.price_level}</div>
-      </div>
+      <FlightSearchDetails flights={flights}/>
     </div>
   );
 };
