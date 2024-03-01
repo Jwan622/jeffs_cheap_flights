@@ -1,7 +1,7 @@
 
-class FlightFetcher
+class FlightAggregatorService
   def self.fetch()
-    data = SerpDecorator.new(SerpClient.fetch()).decorate
+    data = SerpPresenter.new(SerpClient.fetch()).present
 
     return data
     # kayak_flights = KayakDecorator.new(Kayak.fetch()).decorate

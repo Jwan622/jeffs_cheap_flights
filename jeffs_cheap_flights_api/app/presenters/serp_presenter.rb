@@ -1,4 +1,4 @@
-class SerpDecorator
+class SerpPresenter
   include FlightInterface
 
   attr_reader :serp_data
@@ -6,7 +6,7 @@ class SerpDecorator
     @serp_data = serp_data
   end
 
-  def decorate
+  def present
     {
       best_flights: best_flights,
       other_flights: other_flights,
@@ -16,28 +16,28 @@ class SerpDecorator
     }
   end
 
+  private
+
   def best_flights
-    serp_data['best_flights']
+    serp_data[:best_flights]
   end
 
   def other_flights
-    serp_data['other_flights']
+    serp_data[:other_flights]
   end
 
   def lowest_price
-    price_insights(serp_data)['lowest_price']
+    price_insights[:lowest_price]
   end
   def typical_price_range
-    price_insights(serp_data)['typical_price_range']
+    price_insights[:typical_price_range]
   end
 
   def price_level
-    price_insights(serp_data)['price_level']
+    price_insights[:price_level]
   end
 
-  private
-
-  def price_insights(serp_data)
-    serp_data['price_insights']
+  def price_insights
+    serp_data[:price_insights]
   end
 end

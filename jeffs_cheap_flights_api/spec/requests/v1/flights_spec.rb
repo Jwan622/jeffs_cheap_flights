@@ -9,11 +9,11 @@ RSpec.describe Api::V1::FlightsController, :vcr, type: :request do
     end
 
     it 'calls fetch' do
-      allow(FlightFetcher).to receive(:fetch).and_return([])
+      allow(FlightAggregatorService).to receive(:fetch).and_return([])
 
       get "/api/v1/flights"
 
-      expect(FlightFetcher).to have_received(:fetch)
+      expect(FlightAggregatorService).to have_received(:fetch)
     end
     it "returns flights json" do
       get "/api/v1/flights"
