@@ -52,14 +52,14 @@ const App: React.FC = () => {
         const data = await res.json() as FlightsState;
         setFlights(data);
       } catch (error) {
-        console.error('Fetch error:', error);
+        console.error('Fetch Rails API error:', error);
       } finally {
         setIsLoading(false); // Use finally to ensure loading state is updated regardless of fetch success
       }
     };
 
     fetchData();
-  }, []);
+  }, []); // remember that the empty array ensures this is only loaded once upon component load. There are no dependencies so nothing causes this to run again.
 
   if (isLoading) return <div>Loading...</div>;
 
