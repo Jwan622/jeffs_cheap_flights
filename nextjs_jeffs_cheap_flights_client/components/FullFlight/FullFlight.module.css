@@ -1,15 +1,15 @@
 /* FullFlight.module.css */
 .flightContainer {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #eee;
   border: 1px solid #e0e0e0;
 }
 
 .flightHeader {
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin-bottom: 10px;
   font-weight: bold;
 }
@@ -18,13 +18,7 @@
   padding: 10px;
   border-top: 1px solid #e0e0e0; /* If there are multiple legs, separate them visually */
   margin-top: 10px;
-  background-color: #f8f8f8;
-}
-
-.flightLeg:first-child {
-  border-top: none;
-  margin-top: 0;
-  padding-top: 0;
+  background-color: #f8f8ff;
 }
 
 .flightInfo {
@@ -34,14 +28,14 @@
 .airlineLogo {
   width: 50px; /* Adjust the size of the logo */
   height: auto;
-  margin-right: 10px;
+  margin-right: 50px;
   vertical-align: middle;
 }
 
 .priceInfo {
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
-  margin-top: 15px;
+  margin-top: 25px;
 }
 
 .layoversInfo {

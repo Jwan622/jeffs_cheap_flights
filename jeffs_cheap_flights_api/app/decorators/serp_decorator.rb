@@ -28,7 +28,7 @@ class SerpDecorator
     price_insights(serp_data)['lowest_price']
   end
   def typical_price_range
-    price_insights(serp_data)['typical_price_range']
+    "#{price_insights(serp_data)['typical_price_range'][0]} - #{price_insights(serp_data)['typical_price_range'][1]}"
   end
 
   def price_level
