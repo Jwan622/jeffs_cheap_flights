@@ -18,12 +18,23 @@ displays that data after consuming it from the rails endpoint.
 # Some Highlights
  
 Rails Highlights include:   
-  - usage of `vcr` to record external API calls so we don't burn out our 100 api limit from Serp  
+  - Usage of `vcr` to record external API calls so we don't burn out our 100 api limit from Serp  
   - Rails 7 is better tested.  
   - Unit and integration tests  
   - API calls to SerpAPI  
-  - exposure of the API via cors  
+  - Usage of presenters  
   - No database needed here for the functional API app  
 
 React highlights include:  
   - Functional React components using TypeScript and NextJS  
+
+
+# Some teaching highlights
+- How to expose an API
+- How to consume an API
+- Going over CORS and how to have a more stringest cross origin policy than just `origin *`
+- Unit Test and Integration Testing
+- Using VCR to find a balance between mocking api calls entirely and using a real api
+- Separation of concerns. What should the api client do? What should the presenter do? What should the flight fetcher service do?
+- MVC architecture. Controller should be dumb and just connect the services and models and expose the data.
+- TODO: More testing topics. query vs command, factoryboy and fake data, shoulda matchers.
