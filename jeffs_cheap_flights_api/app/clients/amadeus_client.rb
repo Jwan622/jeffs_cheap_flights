@@ -1,8 +1,10 @@
 require 'httparty'
 class AmadeusClient
   include HTTParty
-  base_uri 'https://test.api.amadeus.com'
+  base_uri Dotenv.parse(".env.local", ".env")['AMADEUS_BASE_URI']
+
   attr_reader :params, :access_token
+
   def initialize
     @client_id = Dotenv.parse(".env.local", ".env")['AMADEUS_API_KEY']
     @client_secret = Dotenv.parse(".env.local", ".env")['AMADEUS_SECRET_KEY']
@@ -27,6 +29,8 @@ class AmadeusClient
 
     self.class.get("/v2/shopping/flight-offers", query: @params, headers: headers)
   end
+
+  private
   def authenticate
     # URI.encode_www_form ensures the body is URL-encoded.
     options = {
