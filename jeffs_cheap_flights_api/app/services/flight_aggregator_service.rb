@@ -25,7 +25,7 @@ class FlightAggregatorService
         oldval + newval
       end
     end
-
+    
     combined[:price_level] = combined[:price_level].min_by { |_,v| v }[0]
     combined[:lowest_price] = combined[:lowest_price].min
     combined[:typical_price_range] = [combined[:typical_price_range].min, combined[:typical_price_range].max]

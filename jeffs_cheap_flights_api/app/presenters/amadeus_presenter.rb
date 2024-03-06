@@ -23,14 +23,14 @@ class AmadeusPresenter
         flights: [
           {
             airline: 'some fake amadeus airline',
-            airline_logo: '',
+            airline_logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Pan_Am_Logo.svg/1200px-Pan_Am_Logo.svg.png',
             departure_airport: { name: 'some fake amadeus airline' },
             arrival_airport: { name: 'some fake amadeus arrival airline' },
             flight_number: 'some fake airline number'
           },
           {
             airline: 'some fake amadeus airline2',
-            airline_logo: '',
+            airline_logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Pan_Am_Logo.svg/1200px-Pan_Am_Logo.svg.png',
             departure_airport: { name: 'some fake amadeus airline from layoever' },
             arrival_airport: { name: 'some fake amadeus arrival airline final airport' },
             flight_number: 'some fake airline number'
@@ -49,9 +49,9 @@ class AmadeusPresenter
         flights: [
           {
             airline: 'some fake amadeus airline',
-            airline_logo: '',
-            departure_airport: { name: 'some fake amadeus airline' },
-            arrival_airport: { name: 'some fake amadeus arrival airline' },
+            airline_logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Pan_Am_Logo.svg/1200px-Pan_Am_Logo.svg.png',
+            departure_airport: { name: 'some fake amadeus airline other glights' },
+            arrival_airport: { name: 'some fake amadeus arrival airline other flights' },
             flight_number: 'some fake airline number'
           }
         ],
