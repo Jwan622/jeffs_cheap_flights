@@ -21,12 +21,16 @@ Rails Highlights include:
   - Usage of `vcr` to record external API calls so we don't burn out our 100 api limit from Serp  
   - Rails 7 is better tested.  
   - Unit and integration tests  
-  - API calls to SerpAPI  
-  - Usage of presenters  
-  - No database needed here for the functional API app  
+  - API calls to SerpAPI
+  - API calls to Amadeus Flights
+  - Conforming different data from the APIs to a singular contract
+  - Usage of presenters
+  - No database needed here for the functional API app
+  - Testing
 
 React highlights include:  
   - Functional React components using TypeScript and NextJS  
+  - CSS Grid
 
 
 # Some teaching highlights
