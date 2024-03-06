@@ -13,7 +13,9 @@ class SerpClient
       api_key: Dotenv.parse(".env.local", ".env")['SERP_API_KEY']
     }
 
+    Rails.logger.info("Fetching Google flights...")
     search = GoogleSearch.new(params)
+    Rails.logger.info("Fetched Google flights...")
 
     return search.get_hash.with_indifferent_access
   end

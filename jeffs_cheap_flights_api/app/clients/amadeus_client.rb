@@ -26,13 +26,13 @@ class AmadeusClient
     headers = {
       "Authorization" => "Bearer #{@access_token}"
     }
-
+    Rails.logger.info("Fetching Amadeus flights...")
     self.class.get("/v2/shopping/flight-offers", query: @params, headers: headers)
+    Rails.logger.info("Fetched Amadeus flights...")
   end
 
   private
   def authenticate
-    # URI.encode_www_form ensures the body is URL-encoded.
     options = {
       body: {
         grant_type: 'client_credentials',
@@ -41,7 +41,7 @@ class AmadeusClient
       },
       headers: { 'Content-Type' => 'application/x-www-form-urlencoded' }
     }
-    puts options, 'options before opst'
+    Rails.logger.info('about to authenticate with Amadeus')
     response = self.class.post('/v1/security/oauth2/token', body: {
       grant_type: 'client_credentials',
       client_id:@client_id,
@@ -49,11 +49,8 @@ class AmadeusClient
     },
     headers: { 'Content-Type' => 'application/x-www-form-urlencoded' })
 
-    # Logging the entire response object and the body for debugging
-    puts "Response Object: #{response.inspect}"
-    puts "Response Body: #{response.body}"
-
     if response.code == 200
+      Rails.logger.info('Authentication with Amadeus successful!')
       @access_token = response.parsed_response['access_token']
     else
       raise "Authentication Failed: #{response.code} - #{response.message}, Body: #{response.body}"
