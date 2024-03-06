@@ -17,57 +17,55 @@ class AmadeusPresenter
   private
 
   def best_flights
-    # [
-    #   {
-    #     departure_token: <string>,
-    #     flights: [
-    #       {
-    #         airline: <string>,
-    #         airline_logo: <string>,
-    #         departure_airport: { name: <string> },
-    #         arrival_airport: { name: <string> },
-    #         flight_number: <string>
-    #       }
-    #     ],
-    #     price: <string>
-    #     layovers: [<string of airport codes>]
-    #   }
-    # ]
-    amadeus_data[:best_flights]
+    [
+      {
+        departure_token: 'some token1',
+        flights: [
+          {
+            airline: 'some fake amadeus airline',
+            airline_logo: '',
+            departure_airport: { name: 'some fake amadeus airline' },
+            arrival_airport: { name: 'some fake amadeus arrival airline' },
+            flight_number: 'some fake airline number'
+          }
+        ],
+        price: '$100',
+        layovers: ['LUB', 'BER']
+      }
+    ]
   end
 
   def other_flights
-    # [
-    #   {
-    #     departure_token: <string>,
-    #     flights: [
-    #       {
-    #         airline: <string>,
-    #         airline_logo: <string>,
-    #         departure_airport: { name: <string> },
-    #         arrival_airport: { name: <string> },
-    #         flight_number: <string>
-    #       }
-    #     ],
-    #     price: <string>
-    #       layovers: [<string of airport codes>]
-    #   }
-    # ]
-    amadeus_data[:other_flights]
+    [
+      {
+        departure_token: 'some token1',
+        flights: [
+          {
+            airline: 'some fake amadeus airline',
+            airline_logo: '',
+            departure_airport: { name: 'some fake amadeus airline' },
+            arrival_airport: { name: 'some fake amadeus arrival airline' },
+            flight_number: 'some fake airline number'
+          }
+        ],
+        price: '$100',
+        layovers: ['LUB', 'BER']
+      }
+    ]
   end
 
   def lowest_price
-    price_insights[:lowest_price]
+    200
   end
   def typical_price_range
-    price_insights[:typical_price_range]
+    [100,200]
   end
 
   def price_level
-    price_insights[:price_level]
+    'lowest'
   end
 
   def price_insights
-    amadeus_data[:price_insights]
+    {}
   end
 end
