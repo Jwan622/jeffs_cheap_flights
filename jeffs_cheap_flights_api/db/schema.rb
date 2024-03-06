@@ -13,21 +13,4 @@
 ActiveRecord::Schema[7.0].define(version: 2024_02_29_055338) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "companies", force: :cascade do |t|
-    t.string "name"
-    t.string "country"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.bigint "company_id", null: false
-    t.decimal "cost"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["company_id"], name: "index_orders_on_company_id"
-  end
-
-  add_foreign_key "orders", "companies"
 end
