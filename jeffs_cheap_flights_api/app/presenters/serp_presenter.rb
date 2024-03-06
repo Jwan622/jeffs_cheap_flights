@@ -1,6 +1,4 @@
 class SerpPresenter
-  include FlightInterface
-
   attr_reader :serp_data
   def initialize(serp_data)
     @serp_data = serp_data
