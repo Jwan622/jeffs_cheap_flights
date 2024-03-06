@@ -27,9 +27,16 @@ class AmadeusPresenter
             departure_airport: { name: 'some fake amadeus airline' },
             arrival_airport: { name: 'some fake amadeus arrival airline' },
             flight_number: 'some fake airline number'
+          },
+          {
+            airline: 'some fake amadeus airline2',
+            airline_logo: '',
+            departure_airport: { name: 'some fake amadeus airline from layoever' },
+            arrival_airport: { name: 'some fake amadeus arrival airline final airport' },
+            flight_number: 'some fake airline number'
           }
         ],
-        price: '$100',
+        price: '100',
         layovers: ['LUB', 'BER']
       }
     ]
@@ -48,7 +55,7 @@ class AmadeusPresenter
             flight_number: 'some fake airline number'
           }
         ],
-        price: '$100',
+        price: '100',
         layovers: ['LUB', 'BER']
       }
     ]
